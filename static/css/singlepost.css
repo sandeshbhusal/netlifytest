@@ -19,7 +19,7 @@
 
 .post_body{
     font-family: "Crimson Text";
-    text-align: justify;
+    text-align: left;
     font-size: 22px;
     margin: auto;
     line-height: 30px;
@@ -44,4 +44,9 @@ code{
     margin-bottom: 16px !important;
     padding: 20px !important;
     font-size: 15px !important;
+}
+
+h2{
+    margin-top: 48px;
+    margin-bottom: 32px;;
 }

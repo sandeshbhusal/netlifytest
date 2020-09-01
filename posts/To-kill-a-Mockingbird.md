@@ -1,16 +1,18 @@
 --- 
 layout: post.njk 
-title: "To kill a Mockingbird"
-subtitle: "And other things in between"
+title: "Static site generation sucks. Mostly."
+subtitle: "My experimentation with multiple SSG apps, and one that stood out."
 year: "2020"
-month: "AUG"
-day: "13"
-excerpt: " The awesome book written by some guy in spectacles! The awesome book written by some guy in spectacles! "
+month: "SEP"
+day: "1"
+excerpt: "Why SSG sucks, and how you can make it better."
 tags: ['blog', 'rant', 'howtos', 'fiction', 'algorithms', 'writeups']
 --- 
 
-# Introduction to this post
+## Introduction to this post
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed placerat vel nisl in gravida. Ut tincidunt erat sit amet felis molestie pulvinar. Mauris dui nibh, volutpat et leo et, gravida hendrerit eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer mauris quam, tempor eget turpis ac, ultrices mollis enim. Integer congue vel quam non consequat. Duis vitae tempus lorem. Donec augue mauris, dignissim eget vulputate quis, scelerisque vitae enim. Nulla enim nibh, euismod auctor dolor sed, porta malesuada tellus.
+
 
 ```python
 def someFunction():
@@ -26,3 +28,7 @@ Nulla ex urna, venenatis id tortor at, consectetur elementum dui. Cras eros mass
 
 ## Conclusion
 In hac habitasse platea dictumst. In tempus sagittis ex, vitae facilisis mi vehicula vitae. Sed tincidunt tortor porta commodo consectetur. Cras sit amet nisl id augue sodales hendrerit et vitae lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque bibendum finibus nunc, ut lacinia arcu dictum eget. Quisque in facilisis ipsum. Pellentesque dictum ligula sed massa blandit elementum. Mauris sollicitudin aliquet dolor. Suspendisse pulvinar mattis sollicitudin. Sed nulla dolor, rhoncus a nibh a, vehicula sodales lectus.
+
+---
+
+**References**

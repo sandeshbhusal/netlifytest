@@ -10,6 +10,7 @@
         <title>
             home | Sandesh Bhusal's Blog
         </title>
+        <link rel="stylesheet" href = "/static/css/responsive.css" />
     </head>
     <body>
         <div class = "row sitecontainer">
@@ -65,27 +66,34 @@
         <br />
         <br />
         <br />
-        <h4> Hello, I'm <coral>Sandesh</coral> </h4>
+        <h4 class = "me-intro"> Hello, I'm <coral>Sandesh</coral> </h4>
+        <h4 class = "teletype-small"> I am a <coral class = "teletype"></coral> </h4>
+
     </div>
-    <div class = 'col-md-6 right-pane-main-body'>
+    <div class = 'col-md-6 right-pane-main-body col-sm-12'>
         <div class = "description fader">
             <div class = "content animate__animated">
             </div>
         </div>
         <br />
         <br />
-        <h4> I am a <coral id = "teletype"></coral> </h4>
+        <h4 class = "desc-large"> I am a <coral class = "teletype teletype-large"></coral> </h4>
     </div>
 </div>
-<br />
-<br />
-<br />
+<div class = 'clearfix_large_br_three'>
+    <br />
+    <br />
+    <br />
+</div>
 <div class = "bottom-social-contacts social">
     You can find me on: 
-    <br />
-    <br />
-    <br />
-
+    <div class = 'clearfix_large_br_three'>
+        <br />
+        <br />
+    </div>
+    <div class = "responsive-br">
+        <br />
+    </div>
     <span class = "social-icons">
         <i class = "social-icon" data-feather="facebook"></i> &nbsp; &nbsp;  &nbsp;
         <i class = "social-icon" data-feather="twitter"></i> &nbsp; &nbsp; &nbsp; 
@@ -97,7 +105,21 @@
 
 <script>
     (function(){
-        const element = document.getElementById("teletype")
+        const element = document.getElementsByClassName("teletype")
+        console.log(element)
+        function putChar(char){
+            // This function outputs the text to each .teletype element
+            var current = element[0].innerText
+            for(var i =0; i<element.length; i++){
+                element[i].innerText = current + char
+            }
+        }
+        function clearElements(){
+            for(var i =0; i<element.length; i++){
+                element[i].innerText = ""
+            }
+        }
+        
         const desc    = document.querySelector(".content")
         var stringColl = [
             'Developer', 
@@ -106,21 +128,13 @@
         ]
         var descColl = [
             `
-            I am a polyglot developer. I like to solve coding problems, and have participated 
-            in ACM ICPC regionals from Nepal. In my coding time, I am mostly involved with 
-            python, and use C++ mostly for solving tough time-dependent issues. I coded this site 
-            with mostly my own code!
+            I am a polyglot developer. I like to solve coding problems, and have participated in ACM ICPC regionals from Nepal. In my coding time, I am mostly involved with python, and use C++ mostly for solving tough time-dependent issues. I coded this site with mostly my own code!
             `,
             `
-            I am a student of computer engineering studying at IOE Pulchowk Campus in Nepal.
-            I am currently in my final year of studies and am interested to pursue my further
-            studies in the field of algorithm development and computer security.
+            I am a student of computer engineering studying at IOE Pulchowk Campus in Nepal. I am currently in my final year of studies and am interested to pursue my further studies in the field of algorithm development and computer security.
             `,
             `
-            In my spare time, I also do designing gigs. I am the creative director at LOCUS 2020, 
-            and have been designing since 2016. I can work with logos, mugs, chocolates, tshirts,
-            banners and everything that can be printed or shown off digitally. Hit me up if you are 
-            interested in a collaboration. 
+            In my spare time, I also do designing gigs. I am the creative director at LOCUS 2020, and have been designing since 2016. I can work with logos, mugs, chocolates, tshirts, banners and everything that can be printed or shown off digitally. Hit me up if you are interested in a collaboration. 
             `,
         ]
         var currentIndex  = 0
@@ -131,7 +145,8 @@
             if (currentPos < currentString.length){
                 desc.innerText = descColl[currentIndex % descColl.length]
                 $(".content").fadeIn()
-                element.innerText += currentString.charAt(currentPos)
+                // element.innerText += currentString.charAt(currentPos) 
+                putChar(currentString.charAt(currentPos))
                 currentPos += 1
                 setTimeout(teleType, 100)
             }
@@ -139,7 +154,7 @@
                 setTimeout(()=>{
                     currentPos = 0
                     currentIndex += 1
-                    element.innerText = ""
+                    clearElements()
                     $(".content").fadeOut(0)
                     currentString = stringColl[currentIndex % stringColl.length]
                     teleType()
