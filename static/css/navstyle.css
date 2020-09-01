@@ -1,0 +1,48 @@
+.sitecontainer{
+    margin-top: 100px;
+}
+
+nav{
+    float: right;
+    padding-right: 32px;
+}
+
+nav img{
+    float: right;
+    /* margin-right: -16px; */
+}
+
+nav ul{
+    float: right;
+    text-align: right;
+    list-style: none;
+}
+
+nav ul li{
+    margin-top: 16px;
+    cursor: pointer;
+}
+
+nav ul li a{
+    color: black !important;
+    text-decoration: none;
+}
+
+nav ul li a:hover{
+    text-decoration: none;
+    color: coral !important;
+}
+.utility-icon{
+    margin-right: 40px;
+    cursor: pointer;
+}
+
+nav ul li.selected{
+    color: coral;
+    border-right: 2px solid coral;
+    padding-right: 8px;
+}
+
+nav ul li:hover{
+    color: coral;
+}

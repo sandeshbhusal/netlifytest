@@ -1,0 +1,56 @@
+---
+layout: base.njk
+title: "blog"
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+permalink: /tags/{{ tag }}/
+---
+<link rel="stylesheet" href = "/static/css/blogPage.css" />
+<h1>
+<coral>TAGGED</coral>
+</h1>
+<hr style = "width: 30%; float: left"/>
+<br />
+<br />
+<div class = "blogContainer">
+    <div class = "categories">
+        <a href = "/blog">
+          &larr; Blog
+        </a>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        Posts tagged as <b> {{tag }} </b> 
+    </div>
+</div>
+<br />
+
+
+<table class = "bloglist">
+    {% set taglist = collections[ tag ] %}
+    {% for post in taglist | reverse %}
+    <a href = {{ post.url }}>
+        <tr class = "single_article">
+            <td class = "dateHolder">
+                {{post.data.day}}<br />
+                {{post.data.month}}<br />
+                {{post.data.year}}
+            </td>
+            <td class = "titleSubtitleHolder">
+                <a href = {{ post.url }} >
+                    <h5> {{ post.data.title }} </h5>
+                </a>
+                <small>
+                    {{ post.data.excerpt }}
+                </small>
+                <br />
+                <small>
+                    {% for tag in post.data.tags %}
+                        <span style = "color: #00a1ff">#{{ tag }}</span>&nbsp;
+                    {% endfor %}<br />
+                </small>
+            </td>
+        </tr>
+    </a>
+    {% endfor %}
+</table>

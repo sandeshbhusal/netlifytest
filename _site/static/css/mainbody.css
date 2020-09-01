@@ -1,0 +1,48 @@
+html, body{
+    height: 100%;
+    width: 100%;
+    background: #fafafa;
+    overflow-x: hidden;
+}
+
+.author-image{
+    width: 256px;
+    height: 256px;
+    border-radius: 100%;
+    padding: 28px;
+}
+
+.description{
+    display: flex;
+    height: 256px;
+    justify-content: center;
+    align-items: center;
+}
+
+.description .content{
+    vertical-align: middle;
+}
+
+coral{
+    color: coral;
+}
+
+.left-pane-main-body{
+    text-align: center;
+}
+
+.social{
+    text-align: center;
+}
+
+.social-icons{
+    margin-right: 30px;
+    align-items: stretch;
+    justify-content: space-between;
+    text-align: right;
+}
+
+.social-icon{
+    margin-left: 20px;
+    cursor: pointer;
+}

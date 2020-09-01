@@ -1,0 +1,99 @@
+--- 
+layout: base.njk 
+title: "home"
+--- 
+<br />
+<br />
+<br />
+<div class = 'row'>
+
+    <div class = 'col-md-6 left-pane-main-body'>
+        <img class = "author-image" src = "../static/images/author.jpg" />
+        <br />
+        <br />
+        <br />
+        <h4> Hello, I'm <coral>Sandesh</coral> </h4>
+    </div>
+    <div class = 'col-md-6 right-pane-main-body'>
+        <div class = "description fader">
+            <div class = "content animate__animated">
+            </div>
+        </div>
+        <br />
+        <br />
+        <h4> I am a <coral id = "teletype"></coral> </h4>
+    </div>
+</div>
+<br />
+<br />
+<br />
+<div class = "bottom-social-contacts social">
+    You can find me on: 
+    <br />
+    <br />
+    <br />
+
+    <span class = "social-icons">
+        <i class = "social-icon" data-feather="facebook"></i> &nbsp; &nbsp;  &nbsp;
+        <i class = "social-icon" data-feather="twitter"></i> &nbsp; &nbsp; &nbsp; 
+        <i class = "social-icon" data-feather="github"></i> &nbsp; &nbsp;  &nbsp;
+        <i class = "social-icon" data-feather="mail"></i> &nbsp; &nbsp;  &nbsp;
+        <i class = "social-icon" data-feather="instagram"></i> &nbsp; &nbsp; &nbsp; 
+    </span>
+</div>
+
+<script>
+    (function(){
+        const element = document.getElementById("teletype")
+        const desc    = document.querySelector(".content")
+        var stringColl = [
+            'Developer', 
+            'Student', 
+            'Designer',
+        ]
+        var descColl = [
+            `
+            I am a polyglot developer. I like to solve coding problems, and have participated 
+            in ACM ICPC regionals from Nepal. In my coding time, I am mostly involved with 
+            python, and use C++ mostly for solving tough time-dependent issues. I coded this site 
+            with mostly my own code!
+            `,
+            `
+            I am a student of computer engineering studying at IOE Pulchowk Campus in Nepal.
+            I am currently in my final year of studies and am interested to pursue my further
+            studies in the field of algorithm development and computer security.
+            `,
+            `
+            In my spare time, I also do designing gigs. I am the creative director at LOCUS 2020, 
+            and have been designing since 2016. I can work with logos, mugs, chocolates, tshirts,
+            banners and everything that can be printed or shown off digitally. Hit me up if you are 
+            interested in a collaboration. 
+            `,
+        ]
+        var currentIndex  = 0
+        var currentString = stringColl[currentIndex]
+        var currentPos    = 0
+        
+        function teleType(){
+            if (currentPos < currentString.length){
+                desc.innerText = descColl[currentIndex % descColl.length]
+                $(".content").fadeIn()
+                element.innerText += currentString.charAt(currentPos)
+                currentPos += 1
+                setTimeout(teleType, 100)
+            }
+            else{
+                setTimeout(()=>{
+                    currentPos = 0
+                    currentIndex += 1
+                    element.innerText = ""
+                    $(".content").fadeOut(0)
+                    currentString = stringColl[currentIndex % stringColl.length]
+                    teleType()
+                }, 10000)
+            }
+        }
+
+        teleType()
+    })();
+</script>

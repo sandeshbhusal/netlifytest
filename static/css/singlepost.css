@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
+
+.close-icon{
+    background: red;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    justify-content: center;
+    display: block;
+    align-items: center;
+}
+
+.toc{
+    list-style: none;
+    padding: 0px; 
+    margin: 10px;
+}
+
+.post_body{
+    font-family: "Crimson Text";
+    text-align: justify;
+    font-size: 22px;
+    margin: auto;
+    line-height: 30px;
+}
+
+.navbarr{
+    padding: 8px;
+    background: #f1f1f1;
+    box-shadow: 0 0 10px grey;
+}
+
+.navbarr .branding{
+    text-align: right;
+}
+.central_blog_content{
+    padding-left: 36px;
+    padding-right: 36px;
+}
+
+code{
+    margin-top: 16px !important;
+    margin-bottom: 16px !important;
+    padding: 20px !important;
+    font-size: 15px !important;
+}

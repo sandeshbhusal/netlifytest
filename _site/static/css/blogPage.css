@@ -1,0 +1,39 @@
+.blogContainer{
+    
+}
+
+.categories span{
+    color: #00a1ff;
+    border-bottom: 1px dashed #00a1ff;
+    margin-right: 32px;
+    cursor: pointer;
+}
+
+.dateHolder{
+    padding: 10px;
+    padding-right: 20px;
+    text-align: center;
+    color: black !important;
+}
+
+.titleSubtitleHolder{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.titleSubtitleHolder *{
+    color: black !important;
+}
+
+.categoryAuthorHolder{
+    padding-left: 20px;;
+}
+
+.single_article{
+    color: black;
+    cursor: pointer;
+    height: 150px;
+    transition: color .25s;
+}
+.single_article:hover{
+    color: #00a1ff;
+}
