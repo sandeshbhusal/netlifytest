@@ -11,10 +11,17 @@
 }
 table.bloglist{
     width: 100%;
+    margin: auto;
 }
 table.bloglist tr td{
     vertical-align: middle;
 }
 table.bloglist tr td:nth-child(1){
     text-align: center;
+}
+
+@media screen and (max-width: 1000px){
+    .sitecontainer{
+        padding-top: 24px;
+    }
 }
