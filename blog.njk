@@ -8,23 +8,24 @@ pagination:
     alias: posts
 ---
 <link rel="stylesheet" href = "../static/css/blogPage.css" />
-<h1>
+<div class = "bloglistpage">
+<h1 class="is-size-3">
 <coral>BLOG</coral>
 </h1>
-<hr style = "width: 30%; float: left"/>
+<hr style = "width: 100%; float: left"/>
 <br />
 <br />
-<div class = "blogContainer">
-    <div class = "categories">
-        Categories: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <span><a href = "/tags/rant/">#rants</a></span>
-        <span><a href = "/tags/howtos/">#howtos</a></span>
-        <span><a href = "/tags/algorithms/">#algorithms</a></span>
-        <span><a href = "/tags/fiction/">#fiction</a></span>
-        <span><a href = "/tags/writeups/">#writeups</a></span>
-    </div>
+<div class = "categories has-text-left">
+    Categories: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <span><a href = "/tags/rant/">#rants</a></span>
+    <span><a href = "/tags/howtos/">#howtos</a></span>
+    <span><a href = "/tags/algorithms/">#algorithms</a></span>
+    <span><a href = "/tags/fiction/">#fiction</a></span>
+    <span><a href = "/tags/writeups/">#writeups</a></span>
 </div>
+<hr style = "width: 100%; float: left"/>
 <br />
+
 <table class = "bloglist">
     {% for post in posts %}
     <a href = {{ post.url }}>
@@ -50,5 +51,29 @@ pagination:
             </td>
         </tr>
     </a>
+    <a href = {{ post.url }}>
+        <tr class = "single_article">
+            <td class = "dateHolder">
+                {{post.data.day}}<br />
+                {{post.data.month}}<br />
+                {{post.data.year}}
+            </td>
+            <td class = "titleSubtitleHolder">
+                <a href = {{ post.url }} >
+                    <h5> {{ post.data.title }} </h5>
+                </a>
+                <small>
+                    {{ post.data.excerpt }}
+                </small>
+                <br />
+                <small class = "is-hidden-touch">
+                    {% for tag in post.data.tags %}
+                        <span style = "color: #00a1ff">#{{ tag }}</span>&nbsp;
+                    {% endfor %}<br />
+                </small>
+            </td>
+        </tr>
+    </a>
     {% endfor %}
 </table>
+</div>

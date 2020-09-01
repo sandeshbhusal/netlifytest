@@ -115,26 +115,27 @@
                 </nav>
             </div>
             
-            <div class = "column is-12 is-8-desktop">
+            <div class = "column is-12 content-holder is-8-desktop">
                 
                 <link rel="stylesheet" href = "../static/css/blogPage.css" />
-<h1>
+<div class = "bloglistpage">
+<h1 class="is-size-3">
 <coral>BLOG</coral>
 </h1>
-<hr style = "width: 30%; float: left"/>
+<hr style = "width: 100%; float: left"/>
 <br />
 <br />
-<div class = "blogContainer">
-    <div class = "categories">
-        Categories: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <span><a href = "/tags/rant/">#rants</a></span>
-        <span><a href = "/tags/howtos/">#howtos</a></span>
-        <span><a href = "/tags/algorithms/">#algorithms</a></span>
-        <span><a href = "/tags/fiction/">#fiction</a></span>
-        <span><a href = "/tags/writeups/">#writeups</a></span>
-    </div>
+<div class = "categories has-text-left">
+    Categories: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <span><a href = "/tags/rant/">#rants</a></span>
+    <span><a href = "/tags/howtos/">#howtos</a></span>
+    <span><a href = "/tags/algorithms/">#algorithms</a></span>
+    <span><a href = "/tags/fiction/">#fiction</a></span>
+    <span><a href = "/tags/writeups/">#writeups</a></span>
 </div>
+<hr style = "width: 100%; float: left"/>
 <br />
+
 <table class = "bloglist">
     
     <a href = /posts/To-kill-a-Mockingbird/>
@@ -170,14 +171,48 @@
             </td>
         </tr>
     </a>
+    <a href = /posts/To-kill-a-Mockingbird/>
+        <tr class = "single_article">
+            <td class = "dateHolder">
+                1<br />
+                SEP<br />
+                2020
+            </td>
+            <td class = "titleSubtitleHolder">
+                <a href = /posts/To-kill-a-Mockingbird/ >
+                    <h5> Static site generation sucks. Mostly. </h5>
+                </a>
+                <small>
+                    Why SSG sucks, and how you can make it better.
+                </small>
+                <br />
+                <small class = "is-hidden-touch">
+                    
+                        <span style = "color: #00a1ff">#blog</span>&nbsp;
+                    
+                        <span style = "color: #00a1ff">#rant</span>&nbsp;
+                    
+                        <span style = "color: #00a1ff">#howtos</span>&nbsp;
+                    
+                        <span style = "color: #00a1ff">#fiction</span>&nbsp;
+                    
+                        <span style = "color: #00a1ff">#algorithms</span>&nbsp;
+                    
+                        <span style = "color: #00a1ff">#writeups</span>&nbsp;
+                    <br />
+                </small>
+            </td>
+        </tr>
+    </a>
     
 </table>
+</div>
                 
             </div>
             
             <div class = "column is-2 is-hidden-touch">
                 <!-- Top icons. -->
-                <i data-feather="moon"></i>
+                <i data-feather="moon"></i> &nbsp; &nbsp; &nbsp; &nbsp;
                 <i data-feather="search"></i>
             </div>
         </div>
