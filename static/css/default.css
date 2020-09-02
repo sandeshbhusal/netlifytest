@@ -28,7 +28,8 @@ table.bloglist tr td:nth-child(1){
         font-size: 1.2rem !important;
     }
     .post_body{
-        font-size: 20px !important;
+        font-size: 0.95em !important;
+        text-align: justify !important;
     }
     .post_body h2{
         font-weight: bold;
