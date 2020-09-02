@@ -72,7 +72,7 @@ For the same, let's first arrange the scheduled calls in order of their starting
 
 def sortJobs(jobList):
     # assume job list looks like [{"start": 10, "end": 10.75}, {"start": 10.5, "end": 1}, ...]
-    return jobList.sort(key = lambda x: x.keys())
+    return jobList.sort(key = lambda x: x['start'])
 
 def maxEmployeesRequired(jobList):
 	sortedJobList = sortJobs(jobList)
