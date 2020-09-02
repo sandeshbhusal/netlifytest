@@ -29,11 +29,11 @@
           <div class = "menu-mobile">
             <ul>
                 {% for entry in menu %}
-                    {% if title == entry.title %}
+                    {% if entry.url == "/blog/" %}
                       <li class = "selected" >
-                        <a href = {{ entry.url }}>
+                        <b><a href = {{ entry.url }}>
                             <coral>{{ entry.title }}</coral>
-                        </a>
+                        </a></b>
                       </li>
                     {% else %}
                       <li>
