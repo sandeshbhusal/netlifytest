@@ -27,4 +27,51 @@ table.bloglist tr td:nth-child(1){
     .titleSubtitleHolder h5{
         font-size: 1.2rem !important;
     }
+    .post_body{
+        font-size: 20px !important;
+    }
+    .post_body h2{
+        font-weight: bold;
+        font-size: 30px;
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+}
+.post-center{
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+    padding-top: 0px !important;
+}
+.post_body{
+    padding: 16px;
+    color: black;
+}
+
+.post_body h2{
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+
+.post_body h3{
+    font-weight: bold;
+    font-size: 26px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+
+.post_body h4{
+    font-weight: bold;
+    font-size: 24px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.toc{
+    padding-right: 32px !important;
+    margin-left: -16px !important;
+    position: fixed;
 }

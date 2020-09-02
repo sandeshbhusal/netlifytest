@@ -4,7 +4,9 @@ html, body{
     background: #fafafa;
     overflow-x: hidden;
 }
-
+body{
+    scroll-behavior: smooth !important;
+}
 .author-image{
     width: 196px;
     height: 196px;
