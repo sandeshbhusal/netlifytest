@@ -1,0 +1,76 @@
+.navcontainer-mobile{
+    position: fixed;
+    height: 64px;
+    width: 100%;
+    background: #fafafa;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+.navmenu{
+    position: absolute;
+    right: 32px;
+    top: 20px;
+    height: 40px;
+    width: 36px;
+}
+.navmenu .lines div{
+    background: black;
+    width: 100%;
+    height: 4px;
+    border-radius: 100px;
+
+    transition: transform .25s;
+}
+.navmenu .lines div:nth-child(2){
+    margin-top: 16px;
+}
+
+.navmenu:hover > .lines div:nth-child(1){
+    transform: rotate(45deg) translateY(10px) translateX(4px);
+}
+
+.navmenu:hover > .lines div:nth-child(2){
+    transform: rotate(-45deg) translateY(-10px)  translateX(4px);
+}
+
+.mobile-site-branding{
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    height: 36px;
+    width: 36px;
+}
+.menu-mobile::before{
+    content:'';
+    border: 10px solid white;
+    position: absolute;
+    right: 10px;
+    top: -20px;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-top-color: transparent;
+}
+.menu-mobile{
+    position: absolute;
+    top: 96px;
+    right: 32px;
+    background: white;
+    width: 30%;
+    border-radius: 4px;;
+    display: none;
+}
+.menu-mobile ul{
+    border-radius: 4px;
+}
+.menu-mobile ul li{
+    text-align: right;
+    padding: 16px;
+}
+.menu-mobile ul li:hover{
+    background: coral;
+    color: white !important;
+}
+.menu-mobile ul li:hover > a{
+    background: coral;
+    color: white !important;
+}

@@ -4,6 +4,7 @@
         <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
         <link rel="stylesheet" href = "/static/css/default.css" />
         <link rel="stylesheet" href = "/static/css/navstyle.css" />
+        <link rel="stylesheet" href = "/static/css/navmenu.css" />
         <link rel="stylesheet" href = "/static/css/mainbody.css" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,67 +15,64 @@
         <link rel="stylesheet" href = "/static/css/responsive.css" />
     </head>
     <body>
+        <div class = 'navcontainer-mobile is-hidden-desktop'>
+          <div class = "mobile-site-branding">
+              <a href = "/"> <img src = "/static/images/logo.png"  alt="logo" width = 48 /> </a>
+          </div>
+          <div class = "navmenu">
+            <div class = "lines">
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+          <div class = "menu-mobile">
+            <ul>
+                
+                    
+                      <li class = "selected" >
+                        <a href = />
+                            <coral>home</coral>
+                        </a>
+                      </li>
+                    
+                    
+                
+                    
+                      <li>
+                        <a href = /blog/>
+                            blog
+                        </a>
+                      </li>
+                    
+                    
+                
+                    
+                      <li>
+                        <a href = /projects/>
+                            projects
+                        </a>
+                      </li>
+                    
+                    
+                
+                    
+                      <li>
+                        <a href = /about/>
+                            about
+                        </a>
+                      </li>
+                    
+                    
+                
+            </ul>
+          </div>
 
-<div class="navbar  is-hidden-desktop" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-
-    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-    <a class="navbar-item" href="/">
-      <img src="/static/images/logo.png" width="20" height="28">
-    </a>
-  </div>
-
-  <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-start">
-      <a class="navbar-item">
-        Home
-      </a>
-
-      <a class="navbar-item">
-        Documentation
-      </a>
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More
-        </a>
-
-        <div class="navbar-dropdown">
-          <a class="navbar-item">
-            About
-          </a>
-          <a class="navbar-item">
-            Jobs
-          </a>
-          <a class="navbar-item">
-            Contact
-          </a>
-          <hr class="navbar-divider">
-          <a class="navbar-item">
-            Report an issue
-          </a>
+          <script>
+            $(".navmenu").click(function(){
+              $(".menu-mobile").slideToggle();
+            })
+          </script>
         </div>
-      </div>
-    </div>
-
-    <div class="navbar-end">
-      <div class="navbar-item">
-        <div class="buttons">
-          <a class="button is-primary">
-            <strong>Sign up</strong>
-          </a>
-          <a class="button is-light">
-            Log in
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
         <div class = "columns sitecontainer">
             <div class = "column is-2 is-hidden-touch">
@@ -87,29 +85,41 @@
                     <br />
                     <ul>
                         
-                            <li  >
+                            
+                              <li class = "selected" >
                                 <a href = />
-                                    home
+                                    <coral>home</coral>
                                 </a>
-                            </li>
+                              </li>
+                            
+                            
                         
-                            <li >
+                            
+                              <li>
                                 <a href = /blog/>
                                     blog
                                 </a>
-                            </li>
+                              </li>
+                            
+                            
                         
-                            <li >
+                            
+                              <li>
                                 <a href = /projects/>
                                     projects
                                 </a>
-                            </li>
+                              </li>
+                            
+                            
                         
-                            <li >
+                            
+                              <li>
                                 <a href = /about/>
                                     about
                                 </a>
-                            </li>
+                              </li>
+                            
+                            
                         
                     </ul>
                 </nav>
@@ -137,20 +147,20 @@
 
     <tr>
         <td>
-            <h1 class = "is-size-4"> Hello, I'm <coral>Sandesh</coral> </h1>
+            <h1 class = "is-size-4 is-hidden-touch"> Hello, I'm <b><coral>Sandesh</coral></b> </h1>
+            <h1 class = "is-size-5 is-hidden-desktop"> Hello, I'm <b>Sandesh</b> </h1>
         </td>
         <td  class = 'is-hidden-touch has-text-left	'>
-            <h1 class = "is-size-4 teletype-largex"> I am a <coral class = "teletype"></coral> </h1>
+            <h1 class = "is-size-4 teletype-largex"> I am a <b><coral class = "teletype"></coral></b></h1>
         </td>
     </tr>
 </table>
-<br />
 <table class = "bottom is-hidden-desktop">
 
 
     <tr>
         <td class ="has-text-centered">
-            <h1 class = "is-size-4 teletype-largex"> I am a <coral class = "teletype"></coral> </h1>
+            <h1 class = "is-size-4 teletype-largex"> I am a <b><coral class = "teletype"></coral></b> </h1>
         </td>
     </tr>
     <tr>

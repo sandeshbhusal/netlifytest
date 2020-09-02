@@ -22,6 +22,9 @@ table.bloglist tr td:nth-child(1){
 
 @media screen and (max-width: 1000px){
     .sitecontainer{
-        padding-top: 24px;
+        padding-top: 96px;
+    }
+    .titleSubtitleHolder h5{
+        font-size: 1.2rem !important;
     }
 }
