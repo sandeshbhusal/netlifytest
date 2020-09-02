@@ -2,7 +2,7 @@
     position: fixed;
     height: 64px;
     width: 100%;
-    background: #fafafa;
+    background: #ffffff;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 }
