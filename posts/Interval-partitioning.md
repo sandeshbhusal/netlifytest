@@ -10,7 +10,13 @@ tags: ['blog', 'algorithms']
 
 ---
 
+
+
+![Kelliane](https://y.yarn.co/74528713-3ade-4f40-abc2-49e4e2c665ef_screenshot.jpg)
+
 ## Paper trouble at Donder Muffin
+
+
 
 Donder Muffin is a famous paper company. Unfortunately, due to the incompetence of one of its branch managers, Donder Muffin is under fire. You see, recently, a disgruntled employee printed papers on which curse words were written. The quabbity assuance manager is an old guy named Breed, who totally forgot about his duties, and now, the customer care employee Kelliane Konner is under heavy load. Customers have scheduled calls to complain to her about the paper situation, but the call schedules overlap. Now, the branch manager, Michael Brott, has decided that all the other employees need to help Kelliane.
 
@@ -147,6 +153,14 @@ def maxEmployeesRequired(jobList):
 ## Where you'll see this algorithm in practice
 
 This algorithm can be seen widely in usage, while deciding the number of classrooms required to conduct classes. The scheduled calls are scheduled lectures, and the number of employees denotes the number of classrooms required.
+
+&nbsp;
+
+At the end of the day, Donder Muffin is saved!
+
+&nbsp;
+
+![Michael Scott laughing](https://i.redd.it/8hzjzbpfbks11.jpg)
 
 ## References:
 
