@@ -12,21 +12,21 @@ tags: ['blog', 'algorithms']
 
 
 
-![Kelliane](https://y.yarn.co/74528713-3ade-4f40-abc2-49e4e2c665ef_screenshot.jpg)
+![Kelly](https://y.yarn.co/74528713-3ade-4f40-abc2-49e4e2c665ef_screenshot.jpg)
 
-## Paper trouble at Donder Muffin
+## Paper trouble at Dunder Mifflin
 
 
 
-Donder Muffin is a famous paper company. Unfortunately, due to the incompetence of one of its branch managers, Donder Muffin is under fire. You see, recently, a disgruntled employee printed papers on which curse words were written. The quabbity assuance manager is an old guy named Breed, who totally forgot about his duties, and now, the customer care employee Kelliane Konner is under heavy load. Customers have scheduled calls to complain to her about the paper situation, but the call schedules overlap. Now, the branch manager, Michael Brott, has decided that all the other employees need to help Kelliane.
+Dunder Mifflin is a famous paper company. Unfortunately, due to the incompetence of one of its branch managers, Dunder Mifflin is under fire. You see, recently, a disgruntled employee printed papers on which curse words were written. The quabbity assuance manager is an old guy named Creed, who totally forgot about his duties, and now, the customer care employee Kelly Kapoor is under heavy load. Customers have scheduled calls to complain to her about the paper situation, but the call schedules overlap. Now, the branch manager, Michael Scott, has decided that all the other employees need to help Kelly.
 
 &nbsp;
 
-The thing is, no one really wants to miss their own sales calls to help Kelliane, and there's only so many people Michael can pursuade to help her. As such, we need to find out the maximum number of extra employees Michael needs to convince to help with the customer care calls.
+The thing is, no one really wants to miss their own sales calls to help Kelly, and there's only so many people Michael can pursuade to help her. As such, we need to find out the maximum number of extra employees Michael needs to convince to help with the customer care calls.
 
 ## Visualizing the problem with calls
 
-There are some customers, who have called ahead in the day to schedule a call with Kelliane. The call schedule looks like this:
+There are some customers, who have called ahead in the day to schedule a call with Kelly. The call schedule looks like this:
 
 &nbsp;
 
@@ -60,7 +60,7 @@ Let's construct a simple solution to this problem. Let's take a single employee 
 ```text
 
 1. Start
-2. Customer care employee list = [Kelliane]
+2. Customer care employee list = [Kelly]
 3. Sort the calls in order of their starting times
 4. While calls are not finished:
     a. Accept a call
@@ -99,7 +99,7 @@ Every algorithm is required to be checked for termination. We can see that even 
 The next thing that we're going to do is check the algorithm for its timing bounds. There are some steps in this algorithm, for which the timing bounds are different. 
 
 1. Start - No time
-2. Customer Care employee List = [Kelliane] - No time required, simple array initialization
+2. Customer Care employee List = [Kelly] - No time required, simple array initialization
 3. Sort calls according to start time - This operation requires the same amount of time as the sorting algorithm taken into consideration. For this example, let's assume MergeSort, which requires $O(nlog(n))$ complexity to sort a given list of size $n$.
 4. Now, we enter a loop. This loop is repeated $n$ times; i.e. for every call in the queue. So the time complexity contributed by this loop is $O(n)$.
 5. We are yet to complete analysing the operations *inside* the loop. Inside the loop, the tasks are: 
@@ -156,7 +156,7 @@ This algorithm can be seen widely in usage, while deciding the number of classro
 
 &nbsp;
 
-At the end of the day, Donder Muffin is saved!
+At the end of the day, Dunder Mifflin is saved!
 
 &nbsp;
 
