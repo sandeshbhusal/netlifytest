@@ -4,7 +4,7 @@
         <meta name="google-site-verification" content="Bba7HjTT-ooiG9UlOV9Hk7YJSAlVgz69zfX0XnIc0q8" />
         <meta name="description" content="Allocating time-sensitive tasks to resources."/>
         <meta name="keywords" content="blog,algorithms"/>
-        <meta name="title" content="Interval partitioning: Greedy Algorithm"/>
+        <meta name="title" content="Interval Partitioning: Greedy Algorithm"/>
         <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
         <link rel = "preload" as = "style" href = "/static/css/default.css" onload="this.onload=null;this.rel='stylesheet'"/>
         <link rel = "preload" as = "style" href = "/static/css/navstyle.css" onload="this.onload=null;this.rel='stylesheet'"/>
@@ -23,7 +23,7 @@
             onload="renderMathInElement(document.body);"></script>
         
         <title>
-            Interval partitioning: Greedy Algorithm | Sandesh Bhusal's Blog
+            Interval Partitioning: Greedy Algorithm | Sandesh Bhusal's Blog
         </title>
         <link rel="stylesheet" href = "/static/css/responsive.css" />
     </head>
@@ -150,7 +150,7 @@
                 <div class = "has-text-centered" style = "padding-left: 32px; padding-right: 32px;">
                     <coral>
                         <h1 class = "is-size-2" style = "font-weight: bold;">
-                            Interval partitioning: Greedy Algorithm
+                            Interval Partitioning: Greedy Algorithm
                         </h1>
                     </coral>
                     <br />
@@ -176,19 +176,58 @@
 <p>From the image above, it is quite evident, that the total number of employees that Michael needs to convince is equal to 3,
 since at any given time, there are at most 3 conversations going on!</p>
 <p><img src="https://i.imgur.com/OCLROTs.png" alt="Maximum number of overlaps indicates the maximum number of employees required."></p>
-<h2 id="greedy-solution">Greedy Solution</h2>
-<p>Let's construct a simple greedy solution to this problem. Let's take a single employee at a time. If another call comes in, and the employee is free, then s/he will answer the new call. Otherwise, Michael will need to convince another employee to wo/man the call. Simple as that, right?
+<h2 id="solution">Solution</h2>
+<p>Let's construct a simple solution to this problem. Let's take a single employee at a time. If another call comes in, and the employee is free, then s/he will answer the new call. Otherwise, Michael will need to convince another employee to wo/man the call. Simple as that, right?
  </p>
-<pre class="language-text"><code class="language-text">1. Start<br>2. Customer care employee list = [Kelliane]<br>2. While calls are not finished:<br>    a. Accept a call<br>    b. if any employee in Customer care employee list is free:<br>            i. Assign the call to free employee<br>       otherwise, <br>            i. Convince a new employee to wo/man the phone<br>            ii. Add the new employee to the Customer care employee list<br>3. End</code></pre>
-<p>This is a naive algorithm at best. How do we find out, how to schedule the calls?</p>
-<p>For the same, let's first arrange the scheduled calls in order of their starting. The calls are arranged in order of their beginning time into a list $calls$. Then, we initialize an empty pool of workers. For each $call$ in $calls$, we check the pool to see if there are any free workers. If there are free workers, we will assign the $call$ to them, else we will add a new $worker$. The implementation in python is fairly simple for this task.</p>
-<pre class="language-python"><code class="language-python"><br><span class="token keyword">def</span> <span class="token function">sortJobs</span><span class="token punctuation">(</span>jobList<span class="token punctuation">)</span><span class="token punctuation">:</span><br>    <span class="token comment"># assume job list looks like [{"start": 10, "end": 10.75}, {"start": 10.5, "end": 1}, ...]</span><br>    <span class="token keyword">return</span> jobList<span class="token punctuation">.</span>sort<span class="token punctuation">(</span>key <span class="token operator">=</span> <span class="token keyword">lambda</span> x<span class="token punctuation">:</span> x<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><br><br><span class="token keyword">def</span> <span class="token function">maxEmployeesRequired</span><span class="token punctuation">(</span>jobList<span class="token punctuation">)</span><span class="token punctuation">:</span><br>	sortedJobList <span class="token operator">=</span> sortJobs<span class="token punctuation">(</span>jobList<span class="token punctuation">)</span><br>	customerCare <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><br>	<span class="token keyword">for</span> call <span class="token keyword">in</span> sortedJobList<span class="token punctuation">:</span><br>		assigned <span class="token operator">=</span> <span class="token boolean">False</span><br>		<span class="token keyword">for</span> employee <span class="token keyword">in</span> customerCare<span class="token punctuation">:</span><br>			<span class="token keyword">if</span> employee<span class="token punctuation">[</span><span class="token string">'end'</span><span class="token punctuation">]</span> <span class="token operator">&lt;=</span> call<span class="token punctuation">[</span><span class="token string">'start'</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token comment"># This employee is free!</span><br>				assigned <span class="token operator">=</span> <span class="token boolean">True</span><br>				employee<span class="token punctuation">[</span><span class="token string">'end'</span><span class="token punctuation">]</span> <span class="token operator">=</span> call<span class="token punctuation">[</span><span class="token string">'end'</span><span class="token punctuation">]</span><br>				<span class="token keyword">break</span><br><br>		<span class="token keyword">if</span> <span class="token keyword">not</span> assigned<span class="token punctuation">:</span><br>			newEmployee <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"end"</span><span class="token punctuation">:</span> call<span class="token punctuation">[</span><span class="token string">'end'</span><span class="token punctuation">]</span><span class="token punctuation">}</span><br>			customerCare<span class="token punctuation">.</span>append<span class="token punctuation">(</span>newEmployee<span class="token punctuation">)</span><br>	<span class="token keyword">return</span> <span class="token builtin">len</span><span class="token punctuation">(</span>customerCare<span class="token punctuation">)</span></code></pre>
+<pre class="language-text"><code class="language-text"><br>1. Start<br>2. Customer care employee list = [Kelliane]<br>3. Sort the calls in order of their starting times<br>4. While calls are not finished:<br>    a. Accept a call<br>    b. if any employee in Customer care employee list is free:<br>            i. Assign the call to free employee<br>       otherwise, <br>            i. Convince a new employee to wo/man the phone<br>            ii. Add the new employee to the Customer care employee list<br>5. End<br>&nbsp;</code></pre>
+<p>This is a solution to our problem. You can see that for each call, it tries to find a empty employee and assign the call immediately. What you just read was an algorithm that falls under the class of &quot;greedy&quot; algorithms, that try to find optimal solutions based on the current best outcome. The given algorithm seems sound, but we are yet to prove its correctness. Let's first take a look at its bounds.</p>
+<p> </p>
+<p><strong>Output Bounds</strong></p>
+<p>While looking at any algorithm, we shoult try to ascertain its input/output bounds. To analyze the required output bounds, let's take some extreme-case scenarios into consideration first:</p>
+<ol>
+<li>No one calls the customer care hotline - In this case, Michael does not need to convince anyone</li>
+<li>Everyone calls the customer care hotline at the same time - In this case, Michael needs to convince as many employees as the number of callers right now. This is the most extreme scenario.</li>
+</ol>
+<p>The first scenario might never occur, so let's assume that there's at least one caller in the queue. Taking that assumption, the maximum number of employees required will be $0 &lt; e \leq n$, where $n$ is the number of callers, and $e$ denotes the number of employees required</p>
+<p> </p>
+<p><strong>Termination</strong></p>
+<p>Every algorithm is required to be checked for termination. We can see that even if every caller calls at the same time, equal number of employees can pick the calls. If the call lengths are not indefinite, then every call is bound to be complete and every employee becomes free in the end. So this algorithm will terminate. (Proof left to the reader. Can we use pigeonhole principle here?)</p>
+<p> </p>
+<p><strong>Time Bound</strong></p>
+<p>The next thing that we're going to do is check the algorithm for its timing bounds. There are some steps in this algorithm, for which the timing bounds are different.</p>
+<ol>
+<li>Start - No time</li>
+<li>Customer Care employee List = [Kelliane] - No time required, simple array initialization</li>
+<li>Sort calls according to start time - This operation requires the same amount of time as the sorting algorithm taken into consideration. For this example, let's assume MergeSort, which requires $O(nlog(n))$ complexity to sort a given list of size $n$.</li>
+<li>Now, we enter a loop. This loop is repeated $n$ times; i.e. for every call in the queue. So the time complexity contributed by this loop is $O(n)$.</li>
+<li>We are yet to complete analysing the operations <em>inside</em> the loop. Inside the loop, the tasks are:
+<ol>
+<li>Searching for a free employee</li>
+<li>Adding a new employee to the list</li>
+</ol>
+</li>
+<li>We can see that adding a new employee to the list takes no time whatsoever, but searching for a free employee can take some time. Naiively, you would store the employee end times in an array and look up each element in the array for the finish time, but using a <a href="https://www.gyanblog.com/gyan/coding-interview/min-priority-queue-with-heap/">min priority queue</a>, this time can be reduced to $log(n)$.</li>
+<li>Hence, the total time contributed by the loop becomes $O(nlog(n))$</li>
+<li>The overall time complexity is reduced to $2* O(nlog(n))$, or asymptotically, $O(nlog(n))$ which is pretty fast.</li>
+</ol>
+<p> </p>
+<p><strong>Finally, Proof of Correctness</strong></p>
+<p>We have proved that the outputs for the algorithm are bounded, and it indeed, terminates for the given input. Now we have to prove that the greedy solution that we have proposed is true. Proving correctness of greedy algorithms can be tricky.</p>
+<p>Let us assume that our algorithm outputs $e$ employees as the required count. The $e$-th employee was persuaded, because all $e-1$ employees were busy with their own calls. So this must mean that for the current call to be allocated to a new employee, the call must've started later than some $x$ calls before it and those calls will end sometime later than the current call. Thus, we have $e$ calls overlapping at the current time, which denotes the depth in our previous image. So this means that for any instance of time, the maximum depth required was $e$, as employees can be freed after calls but remain in the free queue. So our queue of employees will increase to a maximum size of $e$.</p>
+<p> </p>
+<h2 id="code-in-python%3A">Code in Python:</h2>
+<p>To implement this algorithm, let's first arrange the scheduled calls in order of their starting. The calls are arranged in order of their beginning time into a list $calls$. Then, we initialize an empty pool of workers. For each $call$ in $calls$, we check the pool to see if there are any free workers. If there are free workers, we will assign the $call$ to them, else we will add a new $worker$. The implementation in python is fairly simple for this task.</p>
+<pre class="language-python"><code class="language-python"><br><span class="token keyword">def</span> <span class="token function">sortJobs</span><span class="token punctuation">(</span>jobList<span class="token punctuation">)</span><span class="token punctuation">:</span><br>    <span class="token comment"># assume job list looks like [{"start": 10, "end": 10.75}, {"start": 10.5, "end": 1}, ...]</span><br>    <span class="token keyword">return</span> jobList<span class="token punctuation">.</span>sort<span class="token punctuation">(</span>key <span class="token operator">=</span> <span class="token keyword">lambda</span> x<span class="token punctuation">:</span> x<span class="token punctuation">[</span><span class="token string">'start'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><br><br><span class="token keyword">def</span> <span class="token function">maxEmployeesRequired</span><span class="token punctuation">(</span>jobList<span class="token punctuation">)</span><span class="token punctuation">:</span><br>	sortedJobList <span class="token operator">=</span> sortJobs<span class="token punctuation">(</span>jobList<span class="token punctuation">)</span><br>	customerCare <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><br>	<span class="token keyword">for</span> call <span class="token keyword">in</span> sortedJobList<span class="token punctuation">:</span><br>		assigned <span class="token operator">=</span> <span class="token boolean">False</span><br>		<span class="token keyword">for</span> employee <span class="token keyword">in</span> customerCare<span class="token punctuation">:</span><br>			<span class="token keyword">if</span> employee<span class="token punctuation">[</span><span class="token string">'end'</span><span class="token punctuation">]</span> <span class="token operator">&lt;=</span> call<span class="token punctuation">[</span><span class="token string">'start'</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token comment"># This employee is free!</span><br>				assigned <span class="token operator">=</span> <span class="token boolean">True</span><br>				employee<span class="token punctuation">[</span><span class="token string">'end'</span><span class="token punctuation">]</span> <span class="token operator">=</span> call<span class="token punctuation">[</span><span class="token string">'end'</span><span class="token punctuation">]</span><br>				<span class="token keyword">break</span><br><br>		<span class="token keyword">if</span> <span class="token keyword">not</span> assigned<span class="token punctuation">:</span><br>			newEmployee <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"end"</span><span class="token punctuation">:</span> call<span class="token punctuation">[</span><span class="token string">'end'</span><span class="token punctuation">]</span><span class="token punctuation">}</span><br>			customerCare<span class="token punctuation">.</span>append<span class="token punctuation">(</span>newEmployee<span class="token punctuation">)</span><br>	<span class="token keyword">return</span> <span class="token builtin">len</span><span class="token punctuation">(</span>customerCare<span class="token punctuation">)</span><br><br></code></pre>
+<p><strong>Note:</strong> In this implementation I have used a linear search which increases the bounds to $O(n^2)$. To implement the search, we can use a priority queue, which I have explained in <a href="">this</a> tutorial.</p>
 <h2 id="where-you'll-see-this-algorithm-in-practice">Where you'll see this algorithm in practice</h2>
 <p>This algorithm can be seen widely in usage, while deciding the number of classrooms required to conduct classes. The scheduled calls are scheduled lectures, and the number of employees denotes the number of classrooms required.</p>
 <h2 id="references%3A">References:</h2>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=i_G8hZYcKnI">This excellent video tutorial</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Interval_scheduling#Greedy_polynomial_solution">Good old Wikipedia</a></li>
+<li><a href="http://www.cs.ust.hk/mjg_lib/Classes/COMP3711H_Fall16/lectures/09greedy.pdf">Hong Kong University of Science and Technology's Lecture slides</a></li>
+<li><a href="https://www.gyanblog.com/gyan/coding-interview/min-priority-queue-with-heap/">Priority queue - Gyan Blog</a></li>
+<li></li>
 </ul>
 
                 </div>
@@ -202,7 +241,7 @@ since at any given time, there are at most 3 conversations going on!</p>
                 <br />
                 <br />
                 <small class = "toc"><div class="toc">
-        <ol><li><a href="#paper-trouble-at-donder-muffin">Paper trouble at Donder Muffin</a></li><li><a href="#visualizing-the-problem-with-calls">Visualizing the problem with calls</a></li><li><a href="#greedy-solution">Greedy Solution</a></li><li><a href="#where-you'll-see-this-algorithm-in-practice">Where you'll see this algorithm in practice</a></li><li><a href="#references%3A">References:</a></li></ol></div></small>
+        <ol><li><a href="#paper-trouble-at-donder-muffin">Paper trouble at Donder Muffin</a></li><li><a href="#visualizing-the-problem-with-calls">Visualizing the problem with calls</a></li><li><a href="#solution">Solution</a></li><li><a href="#code-in-python%3A">Code in Python:</a></li><li><a href="#where-you'll-see-this-algorithm-in-practice">Where you'll see this algorithm in practice</a></li><li><a href="#references%3A">References:</a></li></ol></div></small>
             </div>
         </div>
         <script>
