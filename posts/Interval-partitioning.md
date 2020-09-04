@@ -5,6 +5,7 @@ subtitle: "Allocating time-sensitive tasks to resources"
 year: "2020"
 month: "SEP"
 day: "2"
+hero: "https://y.yarn.co/74528713-3ade-4f40-abc2-49e4e2c665ef_screenshot.jpg"
 excerpt: "Allocating time-sensitive tasks to resources."
 tags: ['blog', 'algorithms']
 
